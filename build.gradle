@@ -1,0 +1,30 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.1.0'
+	id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'br.com.atarashi'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	// beam-sdks-java-core
+	implementation 'org.apache.beam:beam-sdks-java-core:2.47.0'
+	implementation 'org.apache.beam:beam-runners-direct-java:2.47.0'
+
+
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
